@@ -63,7 +63,7 @@ public class ClassService implements IClassService {
 
         if (page <0) page = 0;
 
-        PageRequest pagination = null;
+        PageRequest pagination = PageRequest.of(page, size);
 
         return this.classRepository.findAll(pagination)
                 .map(this::entityToResponse);
